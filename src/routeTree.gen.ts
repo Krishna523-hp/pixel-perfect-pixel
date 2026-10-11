@@ -10,6 +10,9 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as HotelBookingRouteImport } from './routes/hotel-booking'
+import { Route as HeritageIndexRouteImport } from './routes/heritage.index'
 import { Route as Heritage108ShivaTempleRouteImport } from './routes/heritage.108-shiva-temple'
 import { Route as HeritageBardhamanPalaceRouteImport } from './routes/heritage.bardhaman-palace'
 import { Route as HeritageChristChurchRouteImport } from './routes/heritage.christ-church'
@@ -25,6 +28,21 @@ import { Route as HeritageSarbamangalaTempleRouteImport } from './routes/heritag
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HotelBookingRoute = HotelBookingRouteImport.update({
+  id: '/hotel-booking',
+  path: '/hotel-booking',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HeritageIndexRoute = HeritageIndexRouteImport.update({
+  id: '/heritage/',
+  path: '/heritage/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const Heritage108ShivaTempleRoute = Heritage108ShivaTempleRouteImport.update({
@@ -89,6 +107,8 @@ const HeritageSarbamangalaTempleRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/gallery': typeof GalleryRoute
+  '/hotel-booking': typeof HotelBookingRoute
   '/heritage/108-shiva-temple': typeof Heritage108ShivaTempleRoute
   '/heritage/bardhaman-palace': typeof HeritageBardhamanPalaceRoute
   '/heritage/christ-church': typeof HeritageChristChurchRoute
@@ -100,9 +120,12 @@ export interface FileRoutesByFullPath {
   '/heritage/krishnasayar-park': typeof HeritageKrishnasayarParkRoute
   '/heritage/meghnad-saha-planetarium': typeof HeritageMeghnadSahaPlanetariumRoute
   '/heritage/sarbamangala-temple': typeof HeritageSarbamangalaTempleRoute
+  '/heritage/': typeof HeritageIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/gallery': typeof GalleryRoute
+  '/hotel-booking': typeof HotelBookingRoute
   '/heritage/108-shiva-temple': typeof Heritage108ShivaTempleRoute
   '/heritage/bardhaman-palace': typeof HeritageBardhamanPalaceRoute
   '/heritage/christ-church': typeof HeritageChristChurchRoute
@@ -114,10 +137,13 @@ export interface FileRoutesByTo {
   '/heritage/krishnasayar-park': typeof HeritageKrishnasayarParkRoute
   '/heritage/meghnad-saha-planetarium': typeof HeritageMeghnadSahaPlanetariumRoute
   '/heritage/sarbamangala-temple': typeof HeritageSarbamangalaTempleRoute
+  '/heritage': typeof HeritageIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/gallery': typeof GalleryRoute
+  '/hotel-booking': typeof HotelBookingRoute
   '/heritage/108-shiva-temple': typeof Heritage108ShivaTempleRoute
   '/heritage/bardhaman-palace': typeof HeritageBardhamanPalaceRoute
   '/heritage/christ-church': typeof HeritageChristChurchRoute
@@ -129,11 +155,14 @@ export interface FileRoutesById {
   '/heritage/krishnasayar-park': typeof HeritageKrishnasayarParkRoute
   '/heritage/meghnad-saha-planetarium': typeof HeritageMeghnadSahaPlanetariumRoute
   '/heritage/sarbamangala-temple': typeof HeritageSarbamangalaTempleRoute
+  '/heritage/': typeof HeritageIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/gallery'
+    | '/hotel-booking'
     | '/heritage/108-shiva-temple'
     | '/heritage/bardhaman-palace'
     | '/heritage/christ-church'
@@ -145,9 +174,12 @@ export interface FileRouteTypes {
     | '/heritage/krishnasayar-park'
     | '/heritage/meghnad-saha-planetarium'
     | '/heritage/sarbamangala-temple'
+    | '/heritage/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/gallery'
+    | '/hotel-booking'
     | '/heritage/108-shiva-temple'
     | '/heritage/bardhaman-palace'
     | '/heritage/christ-church'
@@ -159,9 +191,12 @@ export interface FileRouteTypes {
     | '/heritage/krishnasayar-park'
     | '/heritage/meghnad-saha-planetarium'
     | '/heritage/sarbamangala-temple'
+    | '/heritage'
   id:
     | '__root__'
     | '/'
+    | '/gallery'
+    | '/hotel-booking'
     | '/heritage/108-shiva-temple'
     | '/heritage/bardhaman-palace'
     | '/heritage/christ-church'
@@ -173,10 +208,13 @@ export interface FileRouteTypes {
     | '/heritage/krishnasayar-park'
     | '/heritage/meghnad-saha-planetarium'
     | '/heritage/sarbamangala-temple'
+    | '/heritage/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  GalleryRoute: typeof GalleryRoute
+  HotelBookingRoute: typeof HotelBookingRoute
   Heritage108ShivaTempleRoute: typeof Heritage108ShivaTempleRoute
   HeritageBardhamanPalaceRoute: typeof HeritageBardhamanPalaceRoute
   HeritageChristChurchRoute: typeof HeritageChristChurchRoute
@@ -188,6 +226,7 @@ export interface RootRouteChildren {
   HeritageKrishnasayarParkRoute: typeof HeritageKrishnasayarParkRoute
   HeritageMeghnadSahaPlanetariumRoute: typeof HeritageMeghnadSahaPlanetariumRoute
   HeritageSarbamangalaTempleRoute: typeof HeritageSarbamangalaTempleRoute
+  HeritageIndexRoute: typeof HeritageIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -197,6 +236,27 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hotel-booking': {
+      id: '/hotel-booking'
+      path: '/hotel-booking'
+      fullPath: '/hotel-booking'
+      preLoaderRoute: typeof HotelBookingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/heritage/': {
+      id: '/heritage/'
+      path: '/heritage'
+      fullPath: '/heritage/'
+      preLoaderRoute: typeof HeritageIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/heritage/108-shiva-temple': {
@@ -281,6 +341,8 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  GalleryRoute: GalleryRoute,
+  HotelBookingRoute: HotelBookingRoute,
   Heritage108ShivaTempleRoute: Heritage108ShivaTempleRoute,
   HeritageBardhamanPalaceRoute: HeritageBardhamanPalaceRoute,
   HeritageChristChurchRoute: HeritageChristChurchRoute,
@@ -292,6 +354,7 @@ const rootRouteChildren: RootRouteChildren = {
   HeritageKrishnasayarParkRoute: HeritageKrishnasayarParkRoute,
   HeritageMeghnadSahaPlanetariumRoute: HeritageMeghnadSahaPlanetariumRoute,
   HeritageSarbamangalaTempleRoute: HeritageSarbamangalaTempleRoute,
+  HeritageIndexRoute: HeritageIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
