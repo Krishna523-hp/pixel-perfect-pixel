@@ -21,7 +21,7 @@ export const Route = createFileRoute("/hotel-booking")({
 const field = "mt-2 w-full rounded-md border border-input bg-card px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-ring/20";
 const label = "text-sm font-medium";
 
-function F({ id, text, children, error }: { id: string; text: string; children: React.ReactNode; error?: string }) {
+function F({ id, text, children, error }: { id: string; text: string; children: React.ReactNode; error?: string | undefined }) {
   return (
     <div>
       <label htmlFor={id} className={label}>{text}</label>
