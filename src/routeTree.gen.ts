@@ -10,33 +10,184 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as Heritage108ShivaTempleRouteImport } from './routes/heritage.108-shiva-temple'
+import { Route as HeritageBardhamanPalaceRouteImport } from './routes/heritage.bardhaman-palace'
+import { Route as HeritageChristChurchRouteImport } from './routes/heritage.christ-church'
+import { Route as HeritageCurzonGateRouteImport } from './routes/heritage.curzon-gate'
+import { Route as HeritageDamodarRiverRouteImport } from './routes/heritage.damodar-river'
+import { Route as HeritageGolapbagRouteImport } from './routes/heritage.golapbag'
+import { Route as HeritageHawaMahalRouteImport } from './routes/heritage.hawa-mahal'
+import { Route as HeritageKankaleshwariTempleRouteImport } from './routes/heritage.kankaleshwari-temple'
+import { Route as HeritageKrishnasayarParkRouteImport } from './routes/heritage.krishnasayar-park'
+import { Route as HeritageMeghnadSahaPlanetariumRouteImport } from './routes/heritage.meghnad-saha-planetarium'
+import { Route as HeritageSarbamangalaTempleRouteImport } from './routes/heritage.sarbamangala-temple'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const Heritage108ShivaTempleRoute = Heritage108ShivaTempleRouteImport.update({
+  id: '/heritage/108-shiva-temple',
+  path: '/heritage/108-shiva-temple',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HeritageBardhamanPalaceRoute = HeritageBardhamanPalaceRouteImport.update({
+  id: '/heritage/bardhaman-palace',
+  path: '/heritage/bardhaman-palace',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HeritageChristChurchRoute = HeritageChristChurchRouteImport.update({
+  id: '/heritage/christ-church',
+  path: '/heritage/christ-church',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HeritageCurzonGateRoute = HeritageCurzonGateRouteImport.update({
+  id: '/heritage/curzon-gate',
+  path: '/heritage/curzon-gate',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HeritageDamodarRiverRoute = HeritageDamodarRiverRouteImport.update({
+  id: '/heritage/damodar-river',
+  path: '/heritage/damodar-river',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HeritageGolapbagRoute = HeritageGolapbagRouteImport.update({
+  id: '/heritage/golapbag',
+  path: '/heritage/golapbag',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HeritageHawaMahalRoute = HeritageHawaMahalRouteImport.update({
+  id: '/heritage/hawa-mahal',
+  path: '/heritage/hawa-mahal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HeritageKankaleshwariTempleRoute =
+  HeritageKankaleshwariTempleRouteImport.update({
+    id: '/heritage/kankaleshwari-temple',
+    path: '/heritage/kankaleshwari-temple',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const HeritageKrishnasayarParkRoute =
+  HeritageKrishnasayarParkRouteImport.update({
+    id: '/heritage/krishnasayar-park',
+    path: '/heritage/krishnasayar-park',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const HeritageMeghnadSahaPlanetariumRoute =
+  HeritageMeghnadSahaPlanetariumRouteImport.update({
+    id: '/heritage/meghnad-saha-planetarium',
+    path: '/heritage/meghnad-saha-planetarium',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const HeritageSarbamangalaTempleRoute =
+  HeritageSarbamangalaTempleRouteImport.update({
+    id: '/heritage/sarbamangala-temple',
+    path: '/heritage/sarbamangala-temple',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/heritage/108-shiva-temple': typeof Heritage108ShivaTempleRoute
+  '/heritage/bardhaman-palace': typeof HeritageBardhamanPalaceRoute
+  '/heritage/christ-church': typeof HeritageChristChurchRoute
+  '/heritage/curzon-gate': typeof HeritageCurzonGateRoute
+  '/heritage/damodar-river': typeof HeritageDamodarRiverRoute
+  '/heritage/golapbag': typeof HeritageGolapbagRoute
+  '/heritage/hawa-mahal': typeof HeritageHawaMahalRoute
+  '/heritage/kankaleshwari-temple': typeof HeritageKankaleshwariTempleRoute
+  '/heritage/krishnasayar-park': typeof HeritageKrishnasayarParkRoute
+  '/heritage/meghnad-saha-planetarium': typeof HeritageMeghnadSahaPlanetariumRoute
+  '/heritage/sarbamangala-temple': typeof HeritageSarbamangalaTempleRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/heritage/108-shiva-temple': typeof Heritage108ShivaTempleRoute
+  '/heritage/bardhaman-palace': typeof HeritageBardhamanPalaceRoute
+  '/heritage/christ-church': typeof HeritageChristChurchRoute
+  '/heritage/curzon-gate': typeof HeritageCurzonGateRoute
+  '/heritage/damodar-river': typeof HeritageDamodarRiverRoute
+  '/heritage/golapbag': typeof HeritageGolapbagRoute
+  '/heritage/hawa-mahal': typeof HeritageHawaMahalRoute
+  '/heritage/kankaleshwari-temple': typeof HeritageKankaleshwariTempleRoute
+  '/heritage/krishnasayar-park': typeof HeritageKrishnasayarParkRoute
+  '/heritage/meghnad-saha-planetarium': typeof HeritageMeghnadSahaPlanetariumRoute
+  '/heritage/sarbamangala-temple': typeof HeritageSarbamangalaTempleRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/heritage/108-shiva-temple': typeof Heritage108ShivaTempleRoute
+  '/heritage/bardhaman-palace': typeof HeritageBardhamanPalaceRoute
+  '/heritage/christ-church': typeof HeritageChristChurchRoute
+  '/heritage/curzon-gate': typeof HeritageCurzonGateRoute
+  '/heritage/damodar-river': typeof HeritageDamodarRiverRoute
+  '/heritage/golapbag': typeof HeritageGolapbagRoute
+  '/heritage/hawa-mahal': typeof HeritageHawaMahalRoute
+  '/heritage/kankaleshwari-temple': typeof HeritageKankaleshwariTempleRoute
+  '/heritage/krishnasayar-park': typeof HeritageKrishnasayarParkRoute
+  '/heritage/meghnad-saha-planetarium': typeof HeritageMeghnadSahaPlanetariumRoute
+  '/heritage/sarbamangala-temple': typeof HeritageSarbamangalaTempleRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/heritage/108-shiva-temple'
+    | '/heritage/bardhaman-palace'
+    | '/heritage/christ-church'
+    | '/heritage/curzon-gate'
+    | '/heritage/damodar-river'
+    | '/heritage/golapbag'
+    | '/heritage/hawa-mahal'
+    | '/heritage/kankaleshwari-temple'
+    | '/heritage/krishnasayar-park'
+    | '/heritage/meghnad-saha-planetarium'
+    | '/heritage/sarbamangala-temple'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/heritage/108-shiva-temple'
+    | '/heritage/bardhaman-palace'
+    | '/heritage/christ-church'
+    | '/heritage/curzon-gate'
+    | '/heritage/damodar-river'
+    | '/heritage/golapbag'
+    | '/heritage/hawa-mahal'
+    | '/heritage/kankaleshwari-temple'
+    | '/heritage/krishnasayar-park'
+    | '/heritage/meghnad-saha-planetarium'
+    | '/heritage/sarbamangala-temple'
+  id:
+    | '__root__'
+    | '/'
+    | '/heritage/108-shiva-temple'
+    | '/heritage/bardhaman-palace'
+    | '/heritage/christ-church'
+    | '/heritage/curzon-gate'
+    | '/heritage/damodar-river'
+    | '/heritage/golapbag'
+    | '/heritage/hawa-mahal'
+    | '/heritage/kankaleshwari-temple'
+    | '/heritage/krishnasayar-park'
+    | '/heritage/meghnad-saha-planetarium'
+    | '/heritage/sarbamangala-temple'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  Heritage108ShivaTempleRoute: typeof Heritage108ShivaTempleRoute
+  HeritageBardhamanPalaceRoute: typeof HeritageBardhamanPalaceRoute
+  HeritageChristChurchRoute: typeof HeritageChristChurchRoute
+  HeritageCurzonGateRoute: typeof HeritageCurzonGateRoute
+  HeritageDamodarRiverRoute: typeof HeritageDamodarRiverRoute
+  HeritageGolapbagRoute: typeof HeritageGolapbagRoute
+  HeritageHawaMahalRoute: typeof HeritageHawaMahalRoute
+  HeritageKankaleshwariTempleRoute: typeof HeritageKankaleshwariTempleRoute
+  HeritageKrishnasayarParkRoute: typeof HeritageKrishnasayarParkRoute
+  HeritageMeghnadSahaPlanetariumRoute: typeof HeritageMeghnadSahaPlanetariumRoute
+  HeritageSarbamangalaTempleRoute: typeof HeritageSarbamangalaTempleRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +199,99 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/heritage/108-shiva-temple': {
+      id: '/heritage/108-shiva-temple'
+      path: '/heritage/108-shiva-temple'
+      fullPath: '/heritage/108-shiva-temple'
+      preLoaderRoute: typeof Heritage108ShivaTempleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/heritage/bardhaman-palace': {
+      id: '/heritage/bardhaman-palace'
+      path: '/heritage/bardhaman-palace'
+      fullPath: '/heritage/bardhaman-palace'
+      preLoaderRoute: typeof HeritageBardhamanPalaceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/heritage/christ-church': {
+      id: '/heritage/christ-church'
+      path: '/heritage/christ-church'
+      fullPath: '/heritage/christ-church'
+      preLoaderRoute: typeof HeritageChristChurchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/heritage/curzon-gate': {
+      id: '/heritage/curzon-gate'
+      path: '/heritage/curzon-gate'
+      fullPath: '/heritage/curzon-gate'
+      preLoaderRoute: typeof HeritageCurzonGateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/heritage/damodar-river': {
+      id: '/heritage/damodar-river'
+      path: '/heritage/damodar-river'
+      fullPath: '/heritage/damodar-river'
+      preLoaderRoute: typeof HeritageDamodarRiverRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/heritage/golapbag': {
+      id: '/heritage/golapbag'
+      path: '/heritage/golapbag'
+      fullPath: '/heritage/golapbag'
+      preLoaderRoute: typeof HeritageGolapbagRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/heritage/hawa-mahal': {
+      id: '/heritage/hawa-mahal'
+      path: '/heritage/hawa-mahal'
+      fullPath: '/heritage/hawa-mahal'
+      preLoaderRoute: typeof HeritageHawaMahalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/heritage/kankaleshwari-temple': {
+      id: '/heritage/kankaleshwari-temple'
+      path: '/heritage/kankaleshwari-temple'
+      fullPath: '/heritage/kankaleshwari-temple'
+      preLoaderRoute: typeof HeritageKankaleshwariTempleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/heritage/krishnasayar-park': {
+      id: '/heritage/krishnasayar-park'
+      path: '/heritage/krishnasayar-park'
+      fullPath: '/heritage/krishnasayar-park'
+      preLoaderRoute: typeof HeritageKrishnasayarParkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/heritage/meghnad-saha-planetarium': {
+      id: '/heritage/meghnad-saha-planetarium'
+      path: '/heritage/meghnad-saha-planetarium'
+      fullPath: '/heritage/meghnad-saha-planetarium'
+      preLoaderRoute: typeof HeritageMeghnadSahaPlanetariumRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/heritage/sarbamangala-temple': {
+      id: '/heritage/sarbamangala-temple'
+      path: '/heritage/sarbamangala-temple'
+      fullPath: '/heritage/sarbamangala-temple'
+      preLoaderRoute: typeof HeritageSarbamangalaTempleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  Heritage108ShivaTempleRoute: Heritage108ShivaTempleRoute,
+  HeritageBardhamanPalaceRoute: HeritageBardhamanPalaceRoute,
+  HeritageChristChurchRoute: HeritageChristChurchRoute,
+  HeritageCurzonGateRoute: HeritageCurzonGateRoute,
+  HeritageDamodarRiverRoute: HeritageDamodarRiverRoute,
+  HeritageGolapbagRoute: HeritageGolapbagRoute,
+  HeritageHawaMahalRoute: HeritageHawaMahalRoute,
+  HeritageKankaleshwariTempleRoute: HeritageKankaleshwariTempleRoute,
+  HeritageKrishnasayarParkRoute: HeritageKrishnasayarParkRoute,
+  HeritageMeghnadSahaPlanetariumRoute: HeritageMeghnadSahaPlanetariumRoute,
+  HeritageSarbamangalaTempleRoute: HeritageSarbamangalaTempleRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
