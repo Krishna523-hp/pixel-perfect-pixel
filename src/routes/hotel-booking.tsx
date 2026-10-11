@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useRef, useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { PageHeading } from "@/components/site/Layout";
-import { validateBooking } from "@/lib/booking";
+import { validateBooking, type BookingErrors, type BookingInput } from "@/lib/booking";
 
 export const Route = createFileRoute("/hotel-booking")({
   head: () => ({
@@ -33,7 +33,7 @@ function F({ id, text, children, error }: { id: string; text: string; children: 
 
 function Booking() {
   const [done, setDone] = useState(false);
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [errors, setErrors] = useState<BookingErrors>({});
   const formRef = useRef<HTMLFormElement>(null);
   const today = new Date().toISOString().slice(0, 10);
 
@@ -41,7 +41,7 @@ function Booking() {
     e.preventDefault();
     const form = e.currentTarget;
     if (!form.checkValidity()) { form.reportValidity(); return; }
-    const data = Object.fromEntries(new FormData(form)) as Record<string, string>;
+    const data = Object.fromEntries(new FormData(form)) as BookingInput;
     const errs = validateBooking(data);
     setErrors(errs);
     if (Object.keys(errs).length) return;
